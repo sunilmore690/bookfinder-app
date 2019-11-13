@@ -10,7 +10,6 @@
 }
 .search-books--form .form-group {
   margin: 0 10px 0 0;
-
 }
 .search-books--form input {
   min-width: 400px;
@@ -36,4 +35,31 @@
   margin-top: 10px;
   font-size: 12px;
   overflow: auto;
+}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+.pagination>li {
+  border:solid 1px blue;
+  padding:6px;
+  min-width: 20px;
+  cursor: pointer;
+  
+}
+.pagination>li>a{
+  color:black
+}
+.active{
+  background-color:blue;
+  color:white
+}
+.paginate-section{
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  padding: 5em 50px;
+  align-items: center;
 }

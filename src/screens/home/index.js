@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './containers/Search'
 import Books from './containers/Books'
+import Pagination from "./containers/Pagination";
 import './home.css'
 
 
@@ -9,6 +10,7 @@ const Home = () => (
     <div className="container">
       <Search />
       <Books />
+      <Pagination/>
     </div>
   </div>
 )

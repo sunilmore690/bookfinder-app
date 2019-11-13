@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import isEmpty from 'lodash/isEmpty'
 
 import BookCard from '../components/BookCard'
-
+import ReactPaginate from 'react-paginate';
 const renderBooksList = (data, query) => {
   if (isEmpty(data)) {
     return null;
@@ -16,6 +16,8 @@ const renderBooksList = (data, query) => {
       <div className="books-list">
         {books.map(book => <BookCard key={book.id} book={book} />)}
       </div>
+      
+      
     </>
   )
 }

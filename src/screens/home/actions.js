@@ -15,10 +15,11 @@ export const receiveBooks = ({status, payload }) => ({
   payload
 })
 
-export const getBooks = (query) => {
+export const getBooks = (query,page=1) => {
+  let startIndex = 10 * parseInt(page) - 10;
   return function (dispatch) {
   	dispatch(requestBooks(query));
-  	const url = `https://www.googleapis.com/books/v1/volumes?q=${query}`
+  	const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&startIndex=${startIndex}`;
   	return axios.get(url)
     .then(response => {
       dispatch(receiveBooks({
