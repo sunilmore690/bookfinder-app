@@ -78,18 +78,22 @@ const Book = ({ match: { params } }) => {
                 />
               ) : null}
             </figure>
-            <div style={{paddingLeft:'10px'}}>
+            <div style={{ paddingLeft: "10px" }}>
               <br></br>
               <button
                 className="btn btn-lg"
                 style={{
                   background: "hotpink",
-                  
+
                   display: "block",
                   width: "80%"
                 }}
               >
-                <a href={url} target="_blank" style={{ color: "white" }}>
+                <a
+                  href={"https://itbook.store/go/buy/" + isbn13}
+                  target="_blank"
+                  style={{ color: "white" }}
+                >
                   Buy Now
                 </a>{" "}
               </button>
@@ -100,7 +104,7 @@ const Book = ({ match: { params } }) => {
                     background: "dimgray",
                     display: "block",
                     marginTop: "10px",
-                   
+
                     width: "80%"
                   }}
                 >
@@ -123,7 +127,12 @@ const Book = ({ match: { params } }) => {
                 <tr>
                   <td>Price</td>
                   <td>
-                    <span className="book-item-value" style={{color:'hotpink'}}>{price}</span>
+                    <span
+                      className="book-item-value"
+                      style={{ color: "hotpink" }}
+                    >
+                      {price}
+                    </span>
                   </td>
                 </tr>
                 <tr>
