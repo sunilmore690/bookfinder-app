@@ -23,10 +23,12 @@ const renderBooksList = (data, query) => {
 }
 const MyLoader = () => (
   <ContentLoader>
-    <rect x="0" y="0" rx="0" ry="0" width="90" height="300" />
-    <rect x="100" y="0" rx="0" ry="0" width="90" height="300" />
-    <rect x="200" y="0" rx="0" ry="0" width="90" height="300" />
-    <rect x="300" y="0" rx="0" ry="0" width="90" height="300" />
+    <rect x="0" y="0" rx="5" ry="0" width="110" height="10" />
+    <rect x="0" y="13" rx="5" ry="0" width="70" height="7" />
+    <rect x="0" y="24" rx="2" ry="2" width="90" height="300" />
+    <rect x="100" y="24" rx="2" ry="2" width="90" height="300" />
+    <rect x="200" y="24" rx="2" ry="2" width="90" height="300" />
+    <rect x="300" y="24" rx="2" ry="2" width="90" height="300" />
   </ContentLoader>
 );
 
@@ -34,7 +36,7 @@ const Books = ({ data, isFetching, query, error }) => {
   let jsxStr = ''
 
 
-  // return <MyLoader/>
+   return <MyLoader/>
   if (isFetching) {
     jsxStr = <MyLoader/>
   } else if (!isEmpty(error)) {
