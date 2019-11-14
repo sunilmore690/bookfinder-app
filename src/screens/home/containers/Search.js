@@ -23,7 +23,7 @@ const Search = ({ getBooks, query }) => {
     <div className="search-books">
       <Form className="search-books--form" onSubmit={handleOnSubmit}>
         <Form.Group controlId="formBasicEmail">
-          <Form.Control type="text" onChange={onInputChange} placeholder="Harry Potter, Food and Love" />
+          <Form.Control type="text" onChange={onInputChange} placeholder="Java,Javascript ." />
           <Form.Text className="text-muted">
             Search the world's most comprehensive index of full-text books.
           </Form.Text>

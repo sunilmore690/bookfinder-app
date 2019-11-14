@@ -3,7 +3,7 @@ import axios from 'axios'
 import isEmpty from 'lodash/isEmpty'
 import './book.css'
 import SimilarItems from './similar-items'
-
+import axios_instance from '../../api'
 const createMarkup = (markup) => ({__html: markup});
 
 const Book = ({ match: { params } }) => {
@@ -14,17 +14,19 @@ const Book = ({ match: { params } }) => {
     setIsFetching(true)
     //api.itbook.store/1.0/books/9781617294136
 
-    axios
-             .get(`/1.0/books/${params.ID}`)
-             .then(response => {
-               setBookInfo(response.data);
-             })
-             .catch(() => {
-               setBookInfo({});
-             })
-             .finally(() => {
-               setIsFetching(false);
-             });
+    axios_instance
+      .get(`/1.0/books/${params.ID}`, {
+        crossDomain: true
+      })
+      .then(response => {
+        setBookInfo(response.data);
+      })
+      .catch(() => {
+        setBookInfo({});
+      })
+      .finally(() => {
+        setIsFetching(false);
+      });
 
   }, [params.ID]);
 
