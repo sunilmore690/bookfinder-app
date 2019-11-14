@@ -11,21 +11,22 @@ const BookCard = ({ book }) => {
   } = book.volumeInfo;
   return (
     <div className="book">
-      <Card>
-        {imageLinks
-          ? <Card.Img variant="top" src={imageLinks.thumbnail} />
-          : null
-        }
+      <Card style={{ minHeight: "500px", maxHeight: "500px" }}>
+        {imageLinks ? (
+          <Card.Img variant="top" src={imageLinks.thumbnail} />
+        ) : null}
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Subtitle>{subtitle}</Card.Subtitle>
           <Card.Text className="book--description">{description}</Card.Text>
           {/* <Card.Link href={infoLink} target="_blank" rel="noopener">Preview</Card.Link> */}
-          <Link className="book" to={`/book/${book.id}`}>View</Link>
+          <Link className="book" to={`/book/${book.id}`}>
+            View
+          </Link>
         </Card.Body>
       </Card>
     </div>
-  )
+  );
 }
 
 export default BookCard;

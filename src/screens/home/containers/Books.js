@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import isEmpty from 'lodash/isEmpty'
-
+import ContentLoader, { Rect, Circle } from "react-content-loader";
 import BookCard from '../components/BookCard'
-import ReactPaginate from 'react-paginate';
+
 const renderBooksList = (data, query) => {
   if (isEmpty(data)) {
     return null;
@@ -21,13 +21,22 @@ const renderBooksList = (data, query) => {
     </>
   )
 }
-
+const MyLoader = () => (
+  <ContentLoader>
+    <rect x="0" y="0" rx="0" ry="0" width="90" height="300" />
+    <rect x="100" y="0" rx="0" ry="0" width="90" height="300" />
+    <rect x="200" y="0" rx="0" ry="0" width="90" height="300" />
+    <rect x="300" y="0" rx="0" ry="0" width="90" height="300" />
+  </ContentLoader>
+);
 
 const Books = ({ data, isFetching, query, error }) => {
   let jsxStr = ''
 
+
+  // return <MyLoader/>
   if (isFetching) {
-    jsxStr = <p>Loading...</p>
+    jsxStr = <MyLoader/>
   } else if (!isEmpty(error)) {
     jsxStr = JSON.stringify(error)
   } else {
