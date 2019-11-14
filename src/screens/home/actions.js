@@ -19,7 +19,7 @@ export const getBooks = (query,page=1) => {
   let startIndex = 10 * parseInt(page) - 10;
   return function (dispatch) {
   	dispatch(requestBooks(query));
-  	const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&startIndex=${startIndex}`;
+  	const url = `/1.0/search/${query}/${page}`;
   	return axios.get(url)
     .then(response => {
       dispatch(receiveBooks({

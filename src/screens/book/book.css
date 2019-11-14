@@ -7,8 +7,36 @@
   padding-right: 15px;
 }
 .book-card--description {
-  width: 75%;
+  /* width: 75%; */
+  text-align: justify;
+  font-family: sans-serif;
 }
 .book-card--thumbnail img {
   width: 100%;
+}
+.book-item-value {
+  font-weight: 500;
+}
+.book-info{
+  box-shadow: '0 2px 12px 0 rgba(0,0,0,.1)';
+}
+.book-info > table {
+  table-layout: fixed;
+  width: 100%;
+  
+  
+}
+.book-info > table > td {
+  width: 25%;
+}
+.book-card-title {
+  /* background: #e9ecef; */
+}
+.book-card-title.book-item-value{
+  font-weight: 500;
+}
+.book-card-header-title {
+  font-weight: 800;
+  font-size: x-large;
+  color: hotpink;
 }

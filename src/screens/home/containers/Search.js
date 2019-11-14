@@ -28,9 +28,10 @@ const Search = ({ getBooks, query }) => {
             Search the world's most comprehensive index of full-text books.
           </Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <button className='btn ' style={{background:'hotpink',color:'white'}}>Search</button>
+        {/* <Button variant="primary" type="submit">
           Search
-        </Button>
+        </Button> */}
       </Form>
     </div>
   )

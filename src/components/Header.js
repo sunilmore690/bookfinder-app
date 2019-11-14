@@ -4,8 +4,10 @@ import Navbar from 'react-bootstrap/Navbar'
 const Header = () => (
   <header id="app-header">
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#/">Book Finder</Navbar.Brand>
+      <Navbar.Brand href="#/">
+        <span style={{color:'hotpink'}}>Book Finder</span>
+      </Navbar.Brand>
     </Navbar>
   </header>
-)
+);
 export default Header;

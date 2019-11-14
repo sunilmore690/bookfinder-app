@@ -5,11 +5,17 @@ import {getBooks} from '../actions'
 const Pagination = ({ data, isFetching, query, error, getBooks }) => {
   const [ pageCount, setPageCount ] = useState(1);
   useEffect(() => {
-    let pages = Math.floor(data.totalItems / 10);
+    let pages = Math.floor(parseInt(data.total) / 10);
     setPageCount(pages);
   }, [data]);
   function handlePageClick(data) {
       getBooks(query,data.selected);
+  }
+  if(!data.total){
+    return <></>
+  }
+  if (parseInt(data.total) === 0) {
+    return <></>;
   }
   return (
     <div className="paginate-section">

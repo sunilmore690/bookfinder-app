@@ -37,38 +37,44 @@
   overflow: auto;
 }
 .pagination {
-     display: flex;
-    padding-left: 0;
-    list-style: none;
-    border-radius: .25rem;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
 }
-.pagination>li {
-
+.pagination > li {
   cursor: pointer;
-  
 }
 
-.pagination>li>a{
-    position: relative;
-    display: block;
-    padding: .5rem .75rem;
-    margin-left: -1px;
-    line-height: 1.25;
-    color: #007bff;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    text-decoration: none;
+.pagination > li > a {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: hotpink;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  text-decoration: none;
 }
-.pagination>li.active>a {
-    z-index: 1;
-    color: #fff;
-    background-color: #007bff;
-   
+.pagination > li.active > a {
+  z-index: 1;
+  color: #fff;
+  background-color: hotpink;
 }
-.paginate-section{
+.paginate-section {
   display: flex;
   justify-content: center;
   flex-flow: column;
   padding: 5em 50px;
   align-items: center;
+}
+.form-control:focus {
+  border-color: hotpink !important;
+  box-shadow: 0 0 0 0.1rem hotpink;
+}
+.card-price {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }

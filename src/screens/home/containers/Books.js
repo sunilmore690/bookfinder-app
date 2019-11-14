@@ -8,18 +8,18 @@ const renderBooksList = (data, query) => {
   if (isEmpty(data)) {
     return null;
   }
-  let { items: books, totalItems } = data;
+  let { books, total } = data;
   return (
     <>
       <h3>Search results for: {query}</h3>
-      <p>Total results: {totalItems}</p>
+      <p>Total results: {total}</p>
       <div className="books-list">
-        {books.map(book => <BookCard key={book.id} book={book} />)}
+        {books.map(book => (
+          <BookCard key={book.isbn13} book={book} />
+        ))}
       </div>
-      
-      
     </>
-  )
+  );
 }
 const MyLoader = () => (
   <ContentLoader>
@@ -41,7 +41,13 @@ const Books = ({ data, isFetching, query, error }) => {
     jsxStr = <MyLoader/>
   } else if (!isEmpty(error)) {
     jsxStr = JSON.stringify(error)
-  } else {
+  } else if(data.total == 0){
+     jsxStr = (
+       <div style={{textAlign:'center'}}>
+         <h2>No books found</h2>
+       </div>
+     );
+  }else{  
     jsxStr = renderBooksList(data, query);
   }
   return (
