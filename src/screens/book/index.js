@@ -90,9 +90,7 @@ const Book = ({ match: { params } }) => {
                 }}
               >
                 <a
-                  href={
-                    `https://www.amazon.in/dp/${isbn13}/?tag=stakenote.xyz`
-                  }
+                  href={"https://itbook.store/go/buy/" + isbn13}
                   target="_blank"
                   style={{ color: "white" }}
                 >
