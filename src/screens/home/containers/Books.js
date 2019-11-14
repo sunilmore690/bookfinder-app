@@ -36,7 +36,7 @@ const Books = ({ data, isFetching, query, error }) => {
   let jsxStr = ''
 
 
-   return <MyLoader/>
+  //  return <MyLoader/>
   if (isFetching) {
     jsxStr = <MyLoader/>
   } else if (!isEmpty(error)) {
