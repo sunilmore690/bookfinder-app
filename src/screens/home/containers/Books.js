@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 import isEmpty from 'lodash/isEmpty'
 import ContentLoader, { Rect, Circle } from "react-content-loader";
 import BookCard from '../components/BookCard'
+import SimilarItems from '../../book/similar-items';
 
 const renderBooksList = (data, query) => {
   if (isEmpty(data)) {
-    return null;
+    return (
+      <div>
+        <h3>New Books</h3>
+        <SimilarItems query="new" url="/1.0"></SimilarItems>
+      </div>
+    );
   }
   let { books, total } = data;
   return (

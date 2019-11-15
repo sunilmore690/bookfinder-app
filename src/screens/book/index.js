@@ -4,6 +4,7 @@ import isEmpty from 'lodash/isEmpty'
 import './book.css'
 import SimilarItems from './similar-items'
 import axios_instance from '../../api'
+import StarRatings from "react-star-ratings";
 const createMarkup = (markup) => ({__html: markup});
 
 const Book = ({ match: { params } }) => {
@@ -109,7 +110,7 @@ const Book = ({ match: { params } }) => {
                     marginTop: "10px",
                     color: "white",
                     width: "100%",
-                    textAlign:'center'
+                    textAlign: "center"
                   }}
                 >
                   Preview
@@ -136,7 +137,14 @@ const Book = ({ match: { params } }) => {
                 <tr>
                   <td>Rating</td>
                   <td>
-                    <span className="book-item-value">{rating}</span>
+                    <StarRatings
+                      rating={parseInt(rating || 0)}
+                      starRatedColor="hotpink"
+                      numberOfStars={5}
+                      name="rating"
+                      starDimension="20px"
+                      starSpacing="5px"
+                    />
                   </td>
                 </tr>
                 <tr>
@@ -200,10 +208,10 @@ const Book = ({ match: { params } }) => {
     <div id="book" className="page">
       <div className="container">
         {jsxStr}<br></br>
-        <h3 class="par">
+        <h3 className="par">
           <span>Similar Books</span>
         </h3>
-        {isFetching ? <></> : <SimilarItems query={bookInfo.title} />}
+        {isFetching ? <></> : <SimilarItems query={bookInfo.title} url={'/1.0/search'} />}
       </div>
     </div>
   );

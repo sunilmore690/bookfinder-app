@@ -1,11 +1,11 @@
 import BookCard from "../home/components/BookCard";
 import React, { useEffect, useState } from "react";
 import axios_instance from '../../api'
-function SimilarItems({ query }) {
+function SimilarItems({ query,url }) {
   const [books, setBooks] = useState([]);
   async function getData() {
     const res = await axios_instance.get(
-      `/1.0/search/${query}`,
+      `${url}/${query}`,
       { crossDomain: true }
     );
     const { books } = res.data;
@@ -17,7 +17,7 @@ function SimilarItems({ query }) {
   return (
     <div className="books-list">
       {books.slice(1).map(book => (
-        <BookCard keybooks={book.isbn13} book={book} />
+        <BookCard key={book.isbn13} book={book} />
       ))}
     </div>
   );
