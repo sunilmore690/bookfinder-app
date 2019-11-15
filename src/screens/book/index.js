@@ -60,68 +60,66 @@ const Book = ({ match: { params } }) => {
     let previewUrl = pdf?pdf[key]:null
    
     jsxStr = (
-      <div className="book-card">
-        <div className="book-card-title">
+      <div className="">
+        <div className="">
           <div className="book-card-header-title">{title}</div>
           <span className="book-item-value"> {subtitle}</span>
         </div>
+        <br></br>
+        <br></br>
+        <div className="row">
+          <div className="col-sm-4 col-xs-12" style={{ marginBottom: "30px" }}>
+            {image ? (
+              <img
+                src={image}
+                className="img-responsive"
+                alt={title}
+                style={{
+                  boxShadow: "0 2px 12px 0 rgba(0,0,0,.1)",
+                  width: "100%"
+                }}
+              />
+            ) : null}
 
-        <div className="book-card--body">
-          <div className="col-sm-4">
-            <figure className="">
-              {image ? (
-                <img
-                  src={image}
-                  className="img-responsive"
-                  alt={title}
-                  style={{ boxShadow: "0 2px 12px 0 rgba(0,0,0,.1)" }}
-                />
-              ) : null}
-            </figure>
-            <div style={{ paddingLeft: "10px" }}>
+            <div>
               <br></br>
-              <button
-                className="btn btn-lg"
+              <a
+                className="bnt btn-lg"
+                href={"https://itbook.store/go/buy/" + isbn13}
+                target="_blank"
                 style={{
                   background: "hotpink",
-
+                  color: "white",
                   display: "block",
-                  width: "80%"
+                  width: "100%",
+                  textAlign: "center"
                 }}
               >
-                <a
-                  href={"https://itbook.store/go/buy/" + isbn13}
-                  target="_blank"
-                  style={{ color: "white" }}
-                >
-                  Buy Now
-                </a>{" "}
-              </button>
+                Buy Now
+              </a>
+
               {previewUrl ? (
-                <button
+                <a
+                  href={previewUrl}
+                  target="_blank"
                   className="btn btn-lg"
                   style={{
                     background: "dimgray",
                     display: "block",
                     marginTop: "10px",
-
-                    width: "80%"
+                    color: "white",
+                    width: "100%",
+                    textAlign:'center'
                   }}
                 >
-                  <a
-                    href={previewUrl}
-                    target="_blank"
-                    style={{ color: "white" }}
-                  >
-                    Preview
-                  </a>{" "}
-                </button>
+                  Preview
+                </a>
               ) : (
                 <></>
               )}
             </div>
           </div>
-          <div className="col-sm-8 book-info">
+          <div className="col-sm-8 col-xs-12 book-info">
             <table className="table table-striped">
               <tbody>
                 <tr>

@@ -17,44 +17,43 @@ const BookCard = ({ book }) => {
   //   </div>
   // );
   return (
-    <div className="book">
-      <Card style={{ minHeight: "500px", maxHeight: "500px" }}>
-        {image ? (
-          <Link className="" to={`/book/${book.isbn13}`}>
-            <span
-            
-            >
-              <Card.Img variant="top" src={image} />
-            </span>
-          </Link>
-        ) : null}
-        <div className="card-background">
-          <Card.Body>
-            <Card.Title>
-              <Link className="" to={`/book/${book.isbn13}`}>
-                <span
-                  style={{
-                    lineHeight: "normal",
-                    fontWeight: "400",
-                    color: "black"
-                  }}
-                >
-                  {title}
-                </span>
-              </Link>
-            </Card.Title>
-            <div style={{ lineHeight: "normal" }}>{subtitle}</div>
-            <div
-              style={{ paddingTop: "10px", color: "hotpink" }}
-              className="card-price"
-            >
-              <span ><span style={{color:'black'}}>Price : </span>{price}</span>
-            </div>
-            {/* <Card.Text className="book--description">{description}</Card.Text> */}
-            {/* <Card.Link href={infoLink} target="_blank" rel="noopener">Preview</Card.Link> */}
-          </Card.Body>
+    <div className="book col-sm-3 col-xs-12">
+      <div className="book-card">
+        <div>
+          {image ? (
+            <Link className="" to={`/book/${book.isbn13}`}>
+              <span>
+                <img src={image} alt={title} className="img img-responsive"  width='100%'/>
+              </span>
+            </Link>
+          ) : null}
         </div>
-      </Card>
+        <div style={{textAlign:'center'}}>
+          <div style={{marginTop:'-20px'}}>
+            <Link className="" to={`/book/${book.isbn13}`}>
+              <span
+                style={{
+                  lineHeight: "normal",
+                  fontWeight: "400",
+                  color: "black"
+                }}
+              >
+                {title}
+              </span>
+            </Link>
+          </div>
+          {/* <div style={{ lineHeight: "normal" }}>{subtitle}</div> */}
+          <div
+            style={{ paddingTop: "10px", color: "hotpink" }}
+            className=""
+          >
+            <span>
+              <span style={{ color: "black" }}>Price : </span>
+              {price}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

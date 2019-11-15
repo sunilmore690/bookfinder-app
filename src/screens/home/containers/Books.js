@@ -22,14 +22,28 @@ const renderBooksList = (data, query) => {
   );
 }
 const MyLoader = () => (
-  <ContentLoader>
-    <rect x="0" y="0" rx="5" ry="0" width="110" height="10" />
-    <rect x="0" y="13" rx="5" ry="0" width="70" height="7" />
-    <rect x="0" y="24" rx="2" ry="2" width="90" height="300" />
-    <rect x="100" y="24" rx="2" ry="2" width="90" height="300" />
-    <rect x="200" y="24" rx="2" ry="2" width="90" height="300" />
-    <rect x="300" y="24" rx="2" ry="2" width="90" height="300" />
-  </ContentLoader>
+  <>
+    <div className="d-block d-sm-none container-fluid">
+      <ContentLoader>
+        <rect x="0" y="0" rx="5" ry="0" width="110" height="40" />
+        <rect x="0" y="45" rx="5" ry="0" width="70" height="30" />
+        <rect x="0" y="60" rx="2" ry="2" width="300" height="400" />
+        <rect x="0" y="500" rx="2" ry="2" width="300" height="400" />
+        <rect x="0" y="950" rx="2" ry="2" width="300" height="400" />
+
+      </ContentLoader>
+    </div>
+    <div className="d-none d-sm-block">
+      <ContentLoader>
+        <rect x="0" y="0" rx="5" ry="0" width="110" height="10" />
+        <rect x="0" y="13" rx="5" ry="0" width="70" height="7" />
+        <rect x="0" y="24" rx="2" ry="2" width="90" height="300" />
+        <rect x="100" y="24" rx="2" ry="2" width="90" height="300" />
+        <rect x="200" y="24" rx="2" ry="2" width="90" height="300" />
+        <rect x="300" y="24" rx="2" ry="2" width="90" height="300" />
+      </ContentLoader>
+    </div>
+  </>
 );
 
 const Books = ({ data, isFetching, query, error }) => {

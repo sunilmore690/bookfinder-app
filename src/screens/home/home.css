@@ -26,7 +26,6 @@
   flex-wrap: wrap;
 }
 .book {
-  width: 25%;
   padding: 0 15px;
   margin-bottom: 30px;
 }
@@ -77,4 +76,14 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+}
+/* new cs */
+.book-search{
+  text-align: center;
+  padding-left:25%;
+  padding-right:25%
+
+}
+.book-card:hover{
+   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1)
 }
